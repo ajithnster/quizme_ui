@@ -1,0 +1,23 @@
+apiVersion: automation.cio/v1alpha1
+kind: RepositoryConfig
+ealImapNumber: EAL-008458
+build:
+  strategy: cirrus-deployment
+  pipeline: nodejs-v18-npm-container-image
+  version: v3
+  config:
+    cirrus-project-name: codehub
+    cirrus-pipeline-name: codehub-quiz-ui
+    distribution-directory: .
+    service-port: '3000'
+    cirrus-api-username: encrypted:v1:AAABj4AXVznX9JHNZgeKMYWTKp92ueUwz0sbM2S9RT7ePGHfPjAisYdsin7ptMrbZnpDHjctHODqnxdtGaUc0itmO8jKa1YqX9Muaj7BaaHiLtEv8VQQl8knV4IHK9unCYzV5ElgclqjjNyX0UtpfLHwUjzB/W4WlrM/9wDYCQyRf6oGvqnjNddIk5oh0QE8LTuV
+    cirrus-api-password: encrypted:v1:AAABj4AXVzlv2h0PoVyOvabZ1DKSPwYVyQkonGhTe74ZMa/sCkJLaF4lpPHhxP92uBYeKfoIuPazgQGd27y2eROCTl8BRlIFdJZZ6hZfNzf8qhWaujCxRgQO1QU4vgF3X8KcdxGsnRLMiGwdntqtwISGe546jDGf0m6GPql3yfZJwGTTu8YOTqf4NXsj7mqv8MeYRbkyJPXlpizRky9EL0nu5cdYbH4Er0Xq/+jV+w==
+    cirrus-region: us-east1
+    release:
+      environments:
+        - name: test
+          deploy-verification-memory-request: "q512mb"
+        - name: pre-production
+          deploy-verification-memory-request: "q512mb"
+        - name: production
+          deploy-verification-memory-request: "q512mb"

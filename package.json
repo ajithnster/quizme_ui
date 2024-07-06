@@ -1,0 +1,73 @@
+{
+  "name": "npsactionswx",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@carbon/grid": "~10.10.0",
+    "@carbon/icons-react": "^11.42.0",
+    "@carbon/pictograms-react": "~10.11.0",
+    "@carbon/react": "^1.58.1",
+    "@carbon/themes": "~10.12.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "axios": "^1.6.7",
+    "bootstrap": "^5.3.3",
+    "papaparse": "^5.4.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "5.0.1",
+    "stylelint-scss": "^4.2.0",
+    "web-vitals": "^2.1.4",
+    "xlsx-js-style": "^1.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.6.3",
+    "@types/jest": "^27.0.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "css-loader": "^3.2.0",
+    "fast-sass-loader": "^2.0.1",
+    "@babel/plugin-proposal-object-rest-spread":  "^7.8.3",
+    "mini-css-extract-plugin": "^2.4.5",
+    "sass": "^1.64.2",
+    "style-loader": "^1.0.0",
+    "stylelint": "^14.2.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "unit-test": "echo 'e2e TBD'",
+    "lint": "echo 'e2e TBD'",
+    "e2e": "echo 'e2e TBD'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

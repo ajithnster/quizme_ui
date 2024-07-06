@@ -1,0 +1,10 @@
+apiVersion: cirrus.ibm.com/v1alpha1
+kind: Application
+metadata:
+  name: nps-watsonx-ui-app
+spec:
+  envFrom:
+    - secretRef:
+        name: nps-watsonx-ui-secret
+  replicas: 1
+  quota: q512mb

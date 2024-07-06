@@ -1,0 +1,21 @@
+
+//@use '@carbon/react/scss/reset';
+@use '@carbon/react' with (
+  $css--default-type: true,
+  $css--reset: true,
+  $use-flexbox-grid: 'true'
+);
+// @use '@carbon/react/scss/config' with (
+//   $font-path: '@ibm/plex',
+//   $use-flexbox-grid: 'true'
+// );
+// @import '@carbon/themes/scss/themes';
+// // Use the gray 10 theme
+// $carbon--theme: $carbon--theme--g10;
+
+// @include carbon--theme();
+// $feature-flags: (
+//   grid-columns-16: true,
+// );
+//@import 'carbon-components/scss/globals/grid/grid';
+// @import 'carbon-components/scss/globals/scss/styles.scss';

@@ -1,0 +1,6 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: nps-watsonx-ui-prod
+  labels:
+    applications.cirrus.ibm.com/pipeline: 81a5e74a-41a1-4361-a3b9-b3febef67bb2
