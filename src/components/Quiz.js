@@ -47,7 +47,7 @@ export const Quiz = ({ questions, endQuiz }) => {
     const handleExplanation = async () => {
         setLoadingExplanation(true); // Start loading indicator
         try {
-            const response = await axios.post('http://127.0.0.1:8080/api/explanation', {
+            const response = await axios.post('http://63.250.56.78/:8081/api/explanation', {
                 question: currentQuestion.question,
                 options: currentQuestion.options,
                 answer: currentQuestion.correct
@@ -76,18 +76,18 @@ export const Quiz = ({ questions, endQuiz }) => {
                         <div>
                             <br /><br /><br /><br />
                             <h2>Question {currentQuestionIndex + 1} of {questions.length}</h2>
-                            <br/>
+                            <br />
                             <p>{currentQuestion.question}</p>
-                            <br/>
+                            <br />
                             {currentQuestion.options.map((option, index) => (
                                 <div key={index}>
                                     <RadioButton
-                                    labelText={option}
-                                    name={`question-${currentQuestionIndex}`}
-                                    value={option}
-                                    checked={userAnswers[currentQuestionIndex] === option}
-                                    onChange={() => handleAnswerChange(option)}
-                                    disabled={showAnswer}
+                                        labelText={option}
+                                        name={`question-${currentQuestionIndex}`}
+                                        value={option}
+                                        checked={userAnswers[currentQuestionIndex] === option}
+                                        onChange={() => handleAnswerChange(option)}
+                                        disabled={showAnswer}
                                     />
                                 </div>
                             ))}
@@ -97,7 +97,7 @@ export const Quiz = ({ questions, endQuiz }) => {
                                     <p>Correct Answer: {currentQuestion.correct}</p>
                                 </div>
                             )}
-                            <br/>
+                            <br />
                             <Button onClick={handleNextQuestion}>
                                 {currentQuestionIndex < questions.length - 1 ? 'Next' : 'Submit'}
                             </Button>
@@ -113,12 +113,12 @@ export const Quiz = ({ questions, endQuiz }) => {
                             {currentQuestion.options.map((option, index) => (
                                 <div key={index}>
                                     <RadioButton
-                                    labelText={option}
-                                    name={`question-${currentQuestionIndex}`}
-                                    value={option}
-                                    checked={userAnswers[currentQuestionIndex] === option}
-                                    onChange={() => handleAnswerChange(option)}
-                                    disabled={showAnswer}
+                                        labelText={option}
+                                        name={`question-${currentQuestionIndex}`}
+                                        value={option}
+                                        checked={userAnswers[currentQuestionIndex] === option}
+                                        onChange={() => handleAnswerChange(option)}
+                                        disabled={showAnswer}
                                     />
                                 </div>
                             ))}

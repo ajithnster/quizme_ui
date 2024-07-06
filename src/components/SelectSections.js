@@ -18,7 +18,7 @@ export const SelectSections = () => {
 
     const fetchSections = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8080/api/sections');
+            const response = await axios.get('http://63.250.56.78/:8081/api/sections');
             setSections(response.data);
         } catch (error) {
             console.error('Error fetching sections:', error);
@@ -43,7 +43,7 @@ export const SelectSections = () => {
     const startQuiz = async () => {
         try {
             console.log("Selected Sections:", selectedSections);
-            const response = await axios.post('http://127.0.0.1:8080/queen', { sections: selectedSections });
+            const response = await axios.post('http://63.250.56.78/:8081/queen', { sections: selectedSections });
             setQuestions(response.data);
             setQuizStarted(true);
         } catch (error) {
