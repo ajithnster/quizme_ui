@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './style.scss';
 import { Quiz } from './Quiz';
@@ -8,7 +8,7 @@ import {
 
 export const SetupQuiz = () => {
     const [llm, setLLM] = useState('openai');
-    const [sections, setSections] = useState([
+    const [sections] = useState([
         "Variables and Data Types",
         "Operators and Control Flow",
         "Functions and Methods",
@@ -24,8 +24,7 @@ export const SetupQuiz = () => {
     const [questions, setQuestions] = useState([]);
     const [showQuestions, setShowQuestions] = useState(false);
 
-
-    const addSections = async () => {
+    const addSections = useCallback(async () => {
         try {
             const payload = { sections };
             console.log('Adding sections:', payload);
@@ -37,12 +36,11 @@ export const SetupQuiz = () => {
         } catch (error) {
             console.error('Error adding sections:', error.response ? error.response.data : error.message);
         }
-    };
+    }, [sections]);
 
     useEffect(() => {
         addSections(); // Automatically add sections on mount
-    }, []);
-
+    }, [addSections]);
 
     const handleLLMChange = (event) => {
         setLLM(event.target.value);
