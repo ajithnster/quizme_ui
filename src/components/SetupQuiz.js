@@ -4,7 +4,7 @@ import './style.scss';
 import { Quiz } from './Quiz';
 import {
     Button,
-  } from '@carbon/react';
+} from '@carbon/react';
 
 export const SetupQuiz = () => {
     const [llm, setLLM] = useState('openai');
@@ -24,9 +24,6 @@ export const SetupQuiz = () => {
     const [questions, setQuestions] = useState([]);
     const [showQuestions, setShowQuestions] = useState(false);
 
-    useEffect(() => {
-        addSections(); // Automatically add sections on mount
-    }, []);
 
     const addSections = async () => {
         try {
@@ -41,6 +38,11 @@ export const SetupQuiz = () => {
             console.error('Error adding sections:', error.response ? error.response.data : error.message);
         }
     };
+
+    useEffect(() => {
+        addSections(); // Automatically add sections on mount
+    }, []);
+
 
     const handleLLMChange = (event) => {
         setLLM(event.target.value);
@@ -78,7 +80,7 @@ export const SetupQuiz = () => {
             </div>
             <div>
                 <h2>Select Sections</h2>
-                <br/>
+                <br />
                 {sections.map(section => (
                     <div key={section}>
                         <label>
@@ -92,7 +94,7 @@ export const SetupQuiz = () => {
                     </div>
                 ))}
             </div>
-            <br/>
+            <br />
             <Button onClick={fetchQuestions}>Fetch Questions</Button>
             {showQuestions && questions.length > 0 && <Quiz questions={questions} />}
         </div>
