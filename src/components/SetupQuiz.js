@@ -55,8 +55,8 @@ export const SetupQuiz = () => {
 
     const fetchQuestions = async () => {
         try {
-            await axios.post('http://63.250.56.78/:8081/api/set_llm', { llm });
-            const response = await axios.post('http://63.250.56.78/:8081/api/questions', { sections: selectedSections });
+            await axios.post('http://63.250.56.78:8081/api/set_llm', { llm });
+            const response = await axios.post('http://63.250.56.78:8081/api/questions', { sections: selectedSections });
             setQuestions(response.data);
             setShowQuestions(true);
         } catch (error) {

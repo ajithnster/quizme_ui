@@ -47,7 +47,7 @@ export const Quiz = ({ questions, endQuiz }) => {
     const handleExplanation = async () => {
         setLoadingExplanation(true); // Start loading indicator
         try {
-            const response = await axios.post('http://63.250.56.78/:8081/api/explanation', {
+            const response = await axios.post('http://63.250.56.78:8081/api/explanation', {
                 question: currentQuestion.question,
                 options: currentQuestion.options,
                 answer: currentQuestion.correct

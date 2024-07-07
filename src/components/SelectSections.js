@@ -18,7 +18,7 @@ export const SelectSections = () => {
 
     const fetchSections = async () => {
         try {
-            const response = await axios.get('http://63.250.56.78/:8081/api/sections');
+            const response = await axios.get('http://63.250.56.78:8081/api/sections');
             setSections(response.data);
         } catch (error) {
             console.error('Error fetching sections:', error);
@@ -28,12 +28,12 @@ export const SelectSections = () => {
     const handleSectionChange = (checked, id) => {
         console.log('Checked:', checked);
         console.log('ID:', id);
-    
+
         // Extract the correct value based on the logged properties
         const value = id.id.replace('checkbox-', '');
-    
+
         console.log('Extracted Value:', value);
-    
+
         setSelectedSections(
             checked ? [...selectedSections, value] : selectedSections.filter(section => section !== value)
         );
@@ -43,7 +43,7 @@ export const SelectSections = () => {
     const startQuiz = async () => {
         try {
             console.log("Selected Sections:", selectedSections);
-            const response = await axios.post('http://63.250.56.78/:8081/queen', { sections: selectedSections });
+            const response = await axios.post('http://63.250.56.78:8081/queen', { sections: selectedSections });
             setQuestions(response.data);
             setQuizStarted(true);
         } catch (error) {
